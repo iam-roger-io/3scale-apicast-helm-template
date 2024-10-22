@@ -1,0 +1,17 @@
+apiCast:
+  name: jujuba
+  namespace: jujuba-3scale-apicast-dev
+  replicas: 1  
+  configurationLoadMode: lazy
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi  
+
+apiManager:
+  portaAdminHost: <FILL PORTAL ADMIN HOST>
+  portalAdminToken: <FILL PORTAL ADMIN TOKEN>
+

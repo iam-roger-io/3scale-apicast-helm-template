@@ -1,0 +1,25 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIcast
+metadata:
+  name: staging-{{ .Values.apiCast.name }}
+  namespace: '{{ .Values.apiCast.namespace }}'
+  labels:
+    app: 3scale-api-management  
+spec:
+  cacheConfigurationSeconds: 300
+  deploymentEnvironment: staging
+  responseCodesIncluded: true
+  timezone: America/Sao_Paulo
+  adminPortalCredentialsRef:
+    name: staging-{{ .Values.apiCast.name }}-portal-admin-credentials
+  extendedMetrics: true
+  logLevel: info
+  replicas: {{ .Values.apiCast.replicas  }}     
+  configurationLoadMode: {{ .Values.apiCast.configurationLoadMode  }} 
+  resources:
+    limits:
+      cpu: {{ .Values.apiCast.resources.limits.cpu  }}    
+      memory: {{ .Values.apiCast.resources.limits.memory  }}   
+    requests:
+      cpu: {{ .Values.apiCast.resources.requests.cpu  }}    
+      memory: {{ .Values.apiCast.resources.requests.memory  }}     
