@@ -2,7 +2,7 @@ apiCast:
   name: jujuba
   namespace: jujuba-3scale-apicast-dev
   replicas: 1  
-  configurationLoadMode: lazy
+  configurationLoadMode: boot
   resources:
     limits:
       cpu: 100m
